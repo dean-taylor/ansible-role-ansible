@@ -1,0 +1,10 @@
+---
+# tasks file for ansible
+- include_tasks: packages-{{ ansible_distribution }}.yml
+
+- name: install ansible
+  ansible.builtin.pip:
+    name:
+      - ansible
+      - openshift
+    state: present
